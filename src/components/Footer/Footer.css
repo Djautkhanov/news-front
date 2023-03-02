@@ -1,0 +1,26 @@
+.footer-contact img{
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    background-color: navy;
+    height: 100px;
+    color: gray;
+}
+.footer-contact img:hover{
+    width: 32px;
+    height: 32px;
+    background-color: gray;
+    border-radius: 50%;
+}
+.footer-text{
+    font-size: 18px;
+}
