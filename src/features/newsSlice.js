@@ -3,7 +3,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   news: [],
   category: [],
-  user: [],
 };
 
 export const getNews = createAsyncThunk(
@@ -29,6 +28,27 @@ export const getNewsCategory = createAsyncThunk(
     }
   }
 );
+export const addComment = createAsyncThunk('add/comment', async (data, thunkAPI) => {
+try {
+  console.log(data.text);
+  const res = await fetch(`http://localhost:4000/news/comment/${data.id}`, {
+  method: 'PATCH',
+  body: JSON.stringify({text: data.comment}),
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${thunkAPI.getState().userSlice.token}`
+  }
+})
+ const comment = await res.json()
+if(comment.error){
+  return thunkAPI.rejectWithValue(comment.error)
+}
+console.log();
+ return  comment
+} catch (error) {
+  return thunkAPI.rejectWithValue(error)
+}
+});
 
 export const newsSlice = createSlice({
   name: "news",
@@ -41,7 +61,16 @@ export const newsSlice = createSlice({
       })
       .addCase(getNewsCategory.fulfilled, (state, action) => {
         state.category = action.payload;
-      });
+      })
+      .addCase(addComment.fulfilled, (state, action) => {
+        state.news = state.news.map((news) => {
+          console.log(action.payload);
+          if(news._id === action.payload._id){
+            news = action.payload
+          }
+          return news;
+        })
+      })
   },
 });
 export default newsSlice.reducer;

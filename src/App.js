@@ -16,7 +16,6 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/news/category/:categoryId" element={<Main />} />
       </Routes>
-      {/* <Main /> */}
       <Footer />
     </div>
   );

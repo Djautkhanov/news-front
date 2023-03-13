@@ -5,7 +5,7 @@ import { getNewsCategory } from "../../features/newsSlice";
 import "./categoryBar.css"
 
 const CategoryBar = () => {
-  const category = useSelector((state) => state.reducer.category);
+  const category = useSelector((state) => state.newsSlice.category);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getNewsCategory());

@@ -7,29 +7,30 @@ import "./Main.css";
 
 const Main = () => {
   const dispatch = useDispatch();
-  // const news = useSelector((state) => state.reducer.news);
-  // const category = useSelector((state) => state.reducer.category);
+
   const { categoryId } = useParams();
 
   useEffect(() => {
     dispatch(getNews());
   }, [dispatch]);
-
+  
   const news = useSelector((state) =>
-    state.reducer.news.filter((item) => {
+    state.newsSlice.news.filter((item) => {
       if (!categoryId) return true;
       return item.category === categoryId;
     })
-  );
+    );
+    console.log(news);
 
-  console.log(news);
 
   const category = useSelector((state) =>
-    state.reducer.category.filter((item) => {
+    state.newsSlice.category.filter((item) => {
       if (!categoryId) return true;
       return item._id === categoryId;
     })
   );
+  console.log(category);
+  
 
   return (
     <main>
@@ -43,14 +44,15 @@ const Main = () => {
             </div>
             <div className="main-news">
               {news.map((item) => {
-                if (item.category === category._id) {
+                if (item.category === category._id && i < 3) {
+                  i++
                   return (
                     <News
                       key={item._id}
                       text={item.text}
                       image={item.image}
                       title={item.title}
-                      comment={item.newsCommit.length}
+                      comment={item.newsComment.length}
                       _id={item._id}
                     />
                   );

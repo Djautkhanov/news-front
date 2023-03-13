@@ -1,11 +1,17 @@
+.page-news{
+    display: flex;
+    flex-direction: row-reverse;
+
+}
 .news-card {
   display: flex;
   margin: 40px 20px 0 20px;
+  flex-direction: column;
+    width: 80%;
 }
 .news-card img {
-  width: 500px;
-  height: 400px;
-  margin-top: 30px;
+  width: 880px;
+  margin: 30px 0 0 50px;
 }
 .n-text {
   margin: 50px 10px 40px 50px;
@@ -16,14 +22,72 @@
   font-size: 30px;
 }
 .comments {
-  width: 100%;
   font-size: 18px;
-  border-bottom: 1px solid gray;
-  margin-top: 40px;
-  border-top: 1px solid gray;
 }
 .none-comment {
   height: 60px;
   padding: 30px 0 0 50px;
 font-size: 20px;
+}
+.comment-block{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width: 900px;
+    align-items: center;
+    margin-left: 50px;
+    border: 1px solid gray;
+    padding: 0 15px 0 15px;
+    box-shadow: 0.5px 0.5px 0px 0px;
+    margin-top: 10px ;
+    border-radius: 10px;
+}
+.user-name{
+}
+.news-13 img{
+    width: 250px;
+    height: 250px;
+    margin: 10px 0px 10px
+}
+.news-news a{
+    text-decoration: none;
+}
+.news-13{
+    width: 250px;
+    height: 330px;
+    border-bottom: 2px solid gray;
+}
+.news-13-title{
+color: gray;
+}
+span {
+    margin-left: 50px;
+    color: red
+}
+.user-info{
+  color: gray;
+  margin-left: 10px
+}
+.date{
+  color :darkslategrey;
+  margin: 10px 0 0 840px;
+}
+.comment-text{
+  width: 75%;
+}
+.comment-inp{
+  margin: 0 0 30px 50px;
+  height: 50px;
+}
+.comment-inp-block{
+  margin: 0 0 30px 50px;
+  display: flex;
+  flex-direction: column;
+  height: 115px;
+  justify-content: space-between
+}
+.comment-btn{
+  width: 130px;
+    height: 111px;
+    margin-top: 10px;
 }

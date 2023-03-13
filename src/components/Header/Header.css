@@ -98,3 +98,25 @@ header {
     border-bottom: 1px solid gray;
     margin: 0 10px ;
 }
+.user-btn:active{
+  width: 200px;
+  height: 30px;
+  margin: 15px 0 0 60px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+}
+.authComplete{
+  color: green;
+  margin-left: 10px;
+}
+.auth-error{
+  color: red;;
+  margin-left: 10px;
+}
+.user-cooment{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 14px;
+}
